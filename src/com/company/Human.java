@@ -3,7 +3,7 @@ package com.company;
 public class Human {
 
     Animal pet;
-    Car car;
+    private Car car;
     private Double salary;
 
     public Animal getPet() {
@@ -19,7 +19,15 @@ public class Human {
     }
 
     public void setCar(Car car) {
-        this.car = car;
+        if(this.salary >= car.getValue()){
+            System.out.println("Car has been bought for cash");
+            this.car = car;
+        } else if (this.salary >= car.getValue()/12.0){
+            System.out.println("Car has been bought on credit");
+            this.car = car;
+        } else {
+            System.out.println("Find new job or get a pay rise");
+        }
     }
 
     public Double getSalary() {

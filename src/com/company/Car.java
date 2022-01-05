@@ -7,6 +7,7 @@ public class Car {
     final String color;
     final short yearOfProduction;
     final boolean sportType;
+    Double value;
 
     public Car(String model, String producer, String color, short yearOfProduction, boolean sportType) {
         this.model = model;
@@ -14,5 +15,13 @@ public class Car {
         this.color = color;
         this.yearOfProduction = yearOfProduction;
         this.sportType = sportType;
+    }
+
+    public Double getValue() {
+        return value;
+    }
+
+    public void setValue(Double value) {
+        this.value = value;
     }
 }
