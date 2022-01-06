@@ -38,5 +38,26 @@ public class Main {
         phone1.turnOn();
         car1.turnOn();
 
+        Human human2 = new Human();
+        Human human3 = new Human();
+        human2.setPet(animal1);
+        human2.setCash(10.0);
+        human3.setCash(200.0);
+        animal1.sell(human2, human3, 50.0);
+        System.out.println(human2.getCash());
+        System.out.println(human3.getCash());
+        System.out.println(human2.getPet());
+        System.out.println(human3.getPet());
+
+        human3.setPhone(phone1);
+        phone1.sell(human3, human2, 40.0);
+        System.out.println(human2.getCash());
+        System.out.println(human3.getCash());
+
+        human1.setCash(300.0);
+        car1.sell(human1, human3, 150.0);
+        System.out.println(human1.getCash());
+        System.out.println(human3.getCash());
+
     }
 }

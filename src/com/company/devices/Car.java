@@ -1,5 +1,7 @@
 package com.company.devices;
 
+import com.company.Human;
+
 public class Car extends Device {
 
     final String color;
@@ -35,5 +37,19 @@ public class Car extends Device {
                 ", sportType=" + sportType +
                 ", value=" + value +
                 '}';
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if(!seller.getCar().equals(this) || buyer.getCash() < price){
+            return;
+        }
+        buyer.setCash(buyer.getCash()-price);
+        seller.setCash(seller.getCash()+price);
+
+        seller.setCarFromSecondHand(null);
+        buyer.setCarFromSecondHand(this);
+
+        System.out.println("Transaction successful");
     }
 }

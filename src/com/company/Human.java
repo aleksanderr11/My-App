@@ -1,12 +1,15 @@
 package com.company;
 
 import com.company.devices.Car;
+import com.company.devices.Phone;
 
 public class Human {
 
     Animal pet;
     private Car car;
     private Double salary;
+    Double cash;
+    Phone phone;
 
     public Animal getPet() {
         return pet;
@@ -32,9 +35,21 @@ public class Human {
         }
     }
 
+    public void setCarFromSecondHand(Car car){
+        this.car = car;
+    }
+
     public Double getSalary() {
         System.out.println("Actual salary: "+this.salary);
         return salary;
+    }
+
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) {
+        this.cash = cash;
     }
 
     public void setSalary(Double salary) {
@@ -46,6 +61,14 @@ public class Human {
         System.out.println("Please contact HR departament to pick up contract amendment");
         System.out.println("Information about your new salary has been send to ZUS and US");
         this.salary = salary;
+    }
+
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phone) {
+        this.phone = phone;
     }
 
     @Override

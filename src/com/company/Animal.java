@@ -1,6 +1,6 @@
 package com.company;
 
-public class Animal {
+public class Animal implements Sellable{
 
     final String species;
     private Double weight;
@@ -42,6 +42,20 @@ public class Animal {
 
     public Double getWeight() {
         return weight;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if(!seller.getPet().equals(this) || buyer.getCash() < price){
+            return;
+        }
+        buyer.setCash(buyer.getCash()-price);
+        seller.setCash(seller.getCash()+price);
+
+        seller.setPet(null);
+        buyer.setPet(this);
+
+        System.out.println("Transaction successful");
     }
 
     @Override
