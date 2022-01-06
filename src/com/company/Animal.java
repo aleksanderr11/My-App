@@ -43,4 +43,13 @@ public class Animal {
     public Double getWeight() {
         return weight;
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "species='" + species + '\'' +
+                ", weight=" + weight +
+                ", isDead=" + isDead +
+                '}';
+    }
 }

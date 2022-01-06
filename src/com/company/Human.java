@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.devices.Car;
+
 public class Human {
 
     Animal pet;
@@ -44,5 +46,14 @@ public class Human {
         System.out.println("Please contact HR departament to pick up contract amendment");
         System.out.println("Information about your new salary has been send to ZUS and US");
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "pet=" + pet +
+                ", car=" + car +
+                ", salary=" + salary +
+                '}';
     }
 }

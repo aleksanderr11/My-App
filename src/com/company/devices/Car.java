@@ -1,4 +1,4 @@
-package com.company;
+package com.company.devices;
 
 public class Car {
 
@@ -23,5 +23,17 @@ public class Car {
 
     public void setValue(Double value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", producer='" + producer + '\'' +
+                ", color='" + color + '\'' +
+                ", yearOfProduction=" + yearOfProduction +
+                ", sportType=" + sportType +
+                ", value=" + value +
+                '}';
     }
 }
