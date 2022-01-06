@@ -1,19 +1,14 @@
 package com.company.devices;
 
-public class Car {
+public class Car extends Device {
 
-    final String model;
-    final String producer;
     final String color;
-    final short yearOfProduction;
     final boolean sportType;
     Double value;
 
-    public Car(String model, String producer, String color, short yearOfProduction, boolean sportType) {
-        this.model = model;
-        this.producer = producer;
+    public Car(String model, String producer, short yearOfProduction, String color, boolean sportType) {
+        super(model, producer, yearOfProduction);
         this.color = color;
-        this.yearOfProduction = yearOfProduction;
         this.sportType = sportType;
     }
 
@@ -23,6 +18,11 @@ public class Car {
 
     public void setValue(Double value) {
         this.value = value;
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("The car has been started");
     }
 
     @Override
