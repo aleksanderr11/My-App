@@ -1,6 +1,9 @@
-package com.company;
+package com.company.creatures;
 
-public class Animal implements Sellable{
+import com.company.Human;
+import com.company.Sellable;
+
+public abstract class Animal implements Sellable, Feedable {
 
     final String species;
     private Double weight;
@@ -21,15 +24,21 @@ public class Animal implements Sellable{
         }
     }
 
-    void feed() {
+    @Override
+    public void feed() {
+        feed(0.1);
+    }
+
+    @Override
+    public void feed(Double foodWeight) {
         if(isDead){
             System.out.println("Animal is dead");
             return;
         }
-        this.weight += 0.1;
+        this.weight += foodWeight;
     }
 
-    void takeForAWalk() {
+    public void takeForAWalk() {
         if(isDead){
             System.out.println("Animal is dead");
             return;
