@@ -2,7 +2,7 @@ package com.company.devices;
 
 import com.company.Human;
 
-public class Car extends Device {
+public abstract class Car extends Device {
 
     final String color;
     final boolean sportType;
@@ -52,4 +52,7 @@ public class Car extends Device {
 
         System.out.println("Transaction successful");
     }
+
+    public abstract void refuel();
+
 }

@@ -4,7 +4,12 @@ import com.company.creatures.Animal;
 import com.company.creatures.FarmAnimal;
 import com.company.creatures.Pet;
 import com.company.devices.Car;
+import com.company.devices.Diesel;
+import com.company.devices.Electric;
 import com.company.devices.Phone;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -21,13 +26,13 @@ public class Main {
         animal1.feed();
 
         Human human1 = new Human();
-        Car car1 = new Car("A5", "Audi", (short) 2012, "red", true);
+        Car car1 = new Diesel("A5", "Audi", (short) 2012, "red", true);
         human1.setSalary(120.0);
         car1.setValue(100.0);
         human1.setCar(car1);
 
-        Car car2 = new Car("Mondeo", "Ford", (short) 2001, "blue", true);
-        Car car3 = new Car("Mondeo", "Ford", (short) 2001, "blue", true);
+        Car car2 = new Diesel("Mondeo", "Ford", (short) 2001, "blue", true);
+        Car car3 = new Diesel("Mondeo", "Ford", (short) 2001, "blue", true);
         System.out.println(car2.equals(car3));
         System.out.println(car2);
         System.out.println(car3);
@@ -67,5 +72,18 @@ public class Main {
         animal2.takeForAWalk();
         System.out.println(animal2.getWeight());
 
+        String snapchatApp = "Snapchat";
+        String instagramApp = "Instagram";
+        String allegroApp = "Allegro";
+        List<String> appList = new ArrayList<>();
+        appList.add(snapchatApp);
+        appList.add(instagramApp);
+        appList.add(allegroApp);
+        phone1.installAnApp(appList);
+        phone1.installAnApp("WhatsApp", "2.21.24.22", "www.whatsapp.com");
+
+        car1.refuel();
+        Car car4 = new Electric("S", "Tesla", (short) 2021, "red", true);
+        car4.refuel();
     }
 }
