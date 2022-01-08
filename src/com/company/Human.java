@@ -46,9 +46,11 @@ public class Human {
         if (this.salary >= car.getValue()) {
             System.out.println("Car has been bought for cash");
             this.garage[position] = car;
+            car.getOwners().add(this);
         } else if (this.salary >= car.getValue() / 12.0) {
             System.out.println("Car has been bought on credit");
             this.garage[position] = car;
+            car.getOwners().add(this);
         } else {
             System.out.println("Find new job or get a pay rise");
         }
@@ -61,6 +63,7 @@ public class Human {
             return;
         }
         garage[position] = car;
+        car.getOwners().add(this);
     }
 
     public Double getSalary() {

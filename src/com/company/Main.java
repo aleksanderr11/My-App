@@ -95,5 +95,14 @@ public class Main {
         System.out.println(human4.garageValue());
         human4.sortCars();
         System.out.println(human4);
+
+        System.out.println(car1.wasOwnedBy(human1));
+        System.out.println(car1.wasTradedBetween(human3, human4));
+        System.out.println(car1.wasTradedBetween(human3, human1));
+
+        car1.sell(human4, human2, 10.0);
+        car1.sell(human2, human1, 5.0);
+        System.out.println(car1.numberOfTransactions());
+
     }
 }
