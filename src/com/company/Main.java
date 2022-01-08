@@ -29,7 +29,7 @@ public class Main {
         Car car1 = new Diesel("A5", "Audi", (short) 2012, "red", true);
         human1.setSalary(120.0);
         car1.setValue(100.0);
-        human1.setCar(car1);
+        human1.setCar(car1, 0);
 
         Car car2 = new Diesel("Mondeo", "Ford", (short) 2001, "blue", true);
         Car car3 = new Diesel("Mondeo", "Ford", (short) 2001, "blue", true);
@@ -84,6 +84,16 @@ public class Main {
 
         car1.refuel();
         Car car4 = new Electric("S", "Tesla", (short) 2021, "red", true);
+        car4.setValue(55.5);
         car4.refuel();
+
+        Human human4 = new Human();
+        human4.setSalary(500.0);
+        human4.setCash(700.0);
+        human4.setCar(car4, 0);
+        car1.sell(human3, human4, 10.0);
+        System.out.println(human4.garageValue());
+        human4.sortCars();
+        System.out.println(human4);
     }
 }

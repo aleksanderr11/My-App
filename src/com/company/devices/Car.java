@@ -6,7 +6,6 @@ public abstract class Car extends Device {
 
     final String color;
     final boolean sportType;
-    Double value;
 
     public Car(String model, String producer, short yearOfProduction, String color, boolean sportType) {
         super(model, producer, yearOfProduction);
@@ -41,14 +40,27 @@ public abstract class Car extends Device {
 
     @Override
     public void sell(Human seller, Human buyer, Double price) {
-        if(!seller.getCar().equals(this) || buyer.getCash() < price){
-            return;
+        int sellerCarPosition = seller.findCarPosition(this);
+        if(sellerCarPosition == -1 || !seller.getCar(sellerCarPosition).equals(this)){
+            System.out.println("This car doesn't belong to this seller");
+            throw new RuntimeException();
+        }
+
+        if(buyer.getCash() < price){
+            System.out.println("Buyer hasn't got enough cash");
+            throw new RuntimeException();
         }
         buyer.setCash(buyer.getCash()-price);
         seller.setCash(seller.getCash()+price);
 
-        seller.setCarFromSecondHand(null);
-        buyer.setCarFromSecondHand(this);
+        int buyerCarPosition = buyer.findFirstFreePosition();
+        if(buyerCarPosition == -1){
+            System.out.println("Buyer hasn't got free position in garage");
+            throw new RuntimeException();
+        }
+
+        seller.setCarFromSecondHand(null, sellerCarPosition);
+        buyer.setCarFromSecondHand(this, buyerCarPosition);
 
         System.out.println("Transaction successful");
     }
