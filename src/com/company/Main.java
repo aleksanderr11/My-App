@@ -104,5 +104,24 @@ public class Main {
         car1.sell(human2, human1, 5.0);
         System.out.println(car1.numberOfTransactions());
 
+        human2.setCash(900.0);
+        Application facebook = new Application("Facebook", "2.0", 5.0);
+        Application whatsApp = new Application("WhatsApp", "5.0 BETA", 10.0);
+        Application zalando = new Application("Zalando", "9.0.1", 0.0);
+        Application uber = new Application("Uber", "1.1.5", 20.0);
+        Application maps = new Application("Google Maps", "10.1.5", 0.0);
+        phone1.installAnApp(facebook);
+        phone1.installAnApp(whatsApp);
+        phone1.installAnApp(zalando);
+        phone1.installAnApp(uber);
+        phone1.installAnApp(maps);
+        System.out.println(phone1.isAnAppAlreadyInstalled(facebook));
+        System.out.println(phone1.isAnAppAlreadyInstalled("Uber"));
+        phone1.showAllFreeApps();
+        System.out.println(phone1.appsValue());
+        phone1.showAllAppsInAlphabeticalOrder();
+        System.out.println("~~");
+        phone1.showAllAppsInAscendingOrderByPrice();
+
     }
 }

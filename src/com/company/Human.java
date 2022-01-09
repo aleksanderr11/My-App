@@ -96,6 +96,8 @@ public class Human {
 
     public void setPhone(Phone phone) {
         this.phone = phone;
+        if(phone!=null)
+        phone.setOwner(this);
     }
 
     public int findCarPosition(Car car) {
