@@ -1,9 +1,9 @@
 package com.company.devices;
 
-import com.company.Human;
-
 import java.util.LinkedList;
 import java.util.List;
+
+import com.company.creatures.Human;
 
 public abstract class Car extends Device {
 

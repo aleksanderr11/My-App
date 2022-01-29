@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.creatures.Animal;
 import com.company.creatures.FarmAnimal;
+import com.company.creatures.Human;
 import com.company.creatures.Pet;
 import com.company.devices.Car;
 import com.company.devices.Diesel;

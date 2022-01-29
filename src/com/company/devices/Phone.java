@@ -1,7 +1,7 @@
 package com.company.devices;
 
 import com.company.Application;
-import com.company.Human;
+import com.company.creatures.Human;
 
 import java.net.URL;
 import java.util.*;
